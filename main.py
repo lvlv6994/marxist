@@ -1,17 +1,26 @@
+
+#from pydub import AudioSegment
+
 from manim import *
 from manim_voiceover import VoiceoverScene
 from manim_voiceover.services.recorder import RecorderService
+
+
 
 
 class MarxistAnimation(Scene):
     def construct(self):
         
         self.camera.background_color = "#ece6e2"
+        self.add_sound("audio.wav")
+        
         group = Group()
         msf = Text("马上风", font="Xingkai SC",font_size=30,color=BLACK).scale(1.5)
         self.play(Write(msf),run_time=1)
         group.add(msf)
         self.play(group.animate.shift(UP*4))
+        self.add_sound("demo.mp3")
+        self.wait()
         
         gongchanzhuyi = Text("共产主义",font="Xingkai SC",color=BLACK).scale(1.5)
         self.play(Write(gongchanzhuyi),run_time=2)
