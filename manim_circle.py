@@ -1,20 +1,47 @@
 from manim import *
-class ManimCircle(Scene):
+
+
+class ManimCircle(MovingCameraScene):
     def construct(self):
-#        circle = Circle(radius=2,fill_color=WHITE,fill_opacity=1)
-#        self.add(circle)
+
+        self.camera.background_color = '#ece6e2'
+
         numberPlane = NumberPlane()
         self.add(numberPlane)
-        circle1 = Circle(radius=1,fill_color=WHITE).shift(LEFT * 2)
-        circle2 = Circle(radius=1,color=BLACK,fill_color=BLACK).shift(RIGHT * 2)
+
+        square = Square()
+        circle = Circle()
+        
+        self.play(
+            Transform(square, circle),
+            subcaption="The square transforms."
+        )
+
+
+        triangle1 = Triangle()
+        circle1 = Circle(radius=1,fill_color=WHITE).surround(triangle1).shift(LEFT * 2)
+        p1 = circle1.point_at_angle(PI/2)
+        p2 = circle1.point_at_angle(270 * DEGREES)
+        s1 = Square(side_length = 0.25).move_to(p1)
+        s2 = Square(side_length = 0.25).move_to(p2)
+
+        line2 = Line(color=RED)
+        circle2 = Circle(radius=1,color=BLACK,fill_color=BLACK).surround(line2,buffer_factor=2.0).shift(RIGHT * 2)
         circle3 = Circle(radius=4,fill_color=BLACK,fill_opacity=0.5)
+        circle_group = Group(triangle1,circle1,s1,s2,line2,circle2,circle3).arrange(buff=1)
+
+        self.play(FadeIn(circle_group,run_time = 1))
+        self.play(FadeOut(circle_group,run_time = 1))
+
+                
         arc1 = Arc(radius=2, start_angle=PI, angle=PI, color=WHITE).shift(LEFT * 2)
         arc2 = Arc(radius=2, start_angle=PI, angle=PI, color=WHITE).shift(RIGHT * 2)
 
-        self.play(Create(circle1))
-        self.play(Create(circle2))
-        self.play(Create(circle3))
         self.play(Create(arc1))
         self.play(Create(arc2))
+   
 
+        
+
+        self.play(self.camera.frame.animate.scale(2))
         

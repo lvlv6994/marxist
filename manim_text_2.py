@@ -1,6 +1,6 @@
 from manim import *
 
-Text.set_default(font="Xingkai SC",color=BLACK,font_size=180,weight=BOLD)
+Text.set_default(font="Songti SC",color=BLACK,font_size=180,weight=BOLD)
 class ManimText1(Scene):
     def construct(self):
         self.camera.background_color = "#ece6e2"
@@ -13,10 +13,15 @@ class ManimText1(Scene):
         self.play(Write(Kongzi),run_time =2)
         self.play(FadeOut(Kongzi),run_time = 1)
         Yinyang = ImageMobject("./yin-yang.png").scale(0.5)
+
+
         
         # self.play(Transform(Kongzi,Yinyang),run_time = 2)
         self.play(FadeIn(Yinyang),run_time = 2)
         self.play(Yinyang.animate.rotate(5*TAU/4),run_time = 4)
+
+        image = ImageMobject("image_marx.jpeg")
+        
         pass
 
 class ManimText2(Scene):
