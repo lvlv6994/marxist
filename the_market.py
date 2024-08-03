@@ -6,11 +6,17 @@ Text.set_default(font_size=100,font="Songti SC",fill_color=BLACK)
 
 class THE_MARKET(MovingCameraScene):
     def construct(self):
+        """
+        如何理解中国的民用市场，毛时代有没有民用市场？
+        """
+        # if the code is like this , and coding is not art .
+        # if only for the work ,and not be useful
         self.camera.background_color = "#ece6e2"
         self.add_sound("the_market.mp3")
         text = Text("什么是市场？")
         self.play(Write(text,run_time = 1))
         
+        # the important of China is the market of people
         text1 = Text("存在主义").next_to(text,DOWN)
         text2 = Text("现实主义").next_to(text,DOWN)
         self.play(Create(text1,run_time = 1))
