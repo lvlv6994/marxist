@@ -11,8 +11,4 @@ class THE_LEFT(Scene):
         self.play(ReplacementTransform(text,text1,run_time = 1))
         self.wait(2)
         self.play(FadeOut(text1,run_time = 1))
-        
-
-        
-        
         pass

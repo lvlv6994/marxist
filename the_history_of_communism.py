@@ -118,11 +118,6 @@ class ManimText(Scene):
         self.play(ReplacementTransform(text_history_old2,text_history_old3))
         self.wait(2)
         self.play(FadeOut(text_history_old3))
-        
-        # text_history_old_yin_yang = ImageMobject("./yin-yang.png") # this image is svg and blackground
-        
-        # self.play(FadeIn(text_history_old_yin_yang),run_time=2)
-        # self.play(FadeOut(text_history_old_yin_yang),run_time=2)
 
 
         engels_image = ImageMobject("public/images/engels_1856.jpg").scale(1).shift(RIGHT * 5 + UP * 2)

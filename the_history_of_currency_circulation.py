@@ -66,7 +66,7 @@ class THE_HISTORY_OF_CURRENCY_CIRCULATION(Scene):
         self.play(Write(text,run_time = 1))
         self.play(FadeOut(text,run_time = 1))
 
-        image1 = ImageMobject("S-106_W_Han_banliang,_Wudi,_140-87_BC,_lead,_prob_private_mint,_22-23mm.jpg")
+        image1 = ImageMobject("22-23mm.jpg")
         self.play(FadeIn(image1),run_time = 1)
         self.play(FadeOut(image1),run_time = 1)
         
