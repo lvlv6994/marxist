@@ -15,7 +15,9 @@ class THE_MARKET(MovingCameraScene):
         # if the code is like this , and coding is not art .
         # if only for the work ,and not be useful
         self.camera.background_color = "#ece6e2"
+        self.camera.background_color = "#ece6e2"
         self.add_sound("the_market.mp3")
+        
         text = Text("什么是市场？")
         self.play(Write(text,run_time = 1))
         #  工业化
@@ -32,6 +34,7 @@ class THE_MARKET(MovingCameraScene):
         self.wait(2)
         self.play(FadeOut(text2,run_time = 1))
         
+        VGroup(text,text1,text2).move_to(UP * 2)
         VGroup(text,text1,text2).move_to(UP * 2)
 
         text3 = Text("马克思")
@@ -52,5 +55,7 @@ class THE_MARKET(MovingCameraScene):
         self.play(self.camera.frame.animate.move_to(text6))
 
         self.play(self.camera.frame.animate.scale(2),run_time = 2)
+
+        
 
         
